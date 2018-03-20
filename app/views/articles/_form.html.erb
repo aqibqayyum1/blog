@@ -1,0 +1,47 @@
+<%= nested_form_for  @article, html:{ multipart: true},remote: true do |f| %> 
+  <div id= "article_errors">
+    <%= render 'article_error_messege'%>
+  </div>
+
+
+<p>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.label :subtitle %><br>
+    <%= f.text_area :subtitle %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <%= f.fields_for :comments do |comment| %>
+    <p>
+      <%= comment.label :commenter %><br>
+      <%= comment.text_field :commenter %>
+    </p>
+    
+    <p>
+      <%= comment.label :body %><br>
+      <%= comment.text_field :body %>
+    </p>
+
+    <%= comment.link_to_remove "Remove this comment" %>
+  <% end %>
+
+  <p><%= f.link_to_add "Add a comment", :comments %></p>
+ 
+
+<% end %>

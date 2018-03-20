@@ -1,0 +1,13 @@
+
+
+<% if @valid == true%>
+	$('#article_tables').html(
+	"<%= escape_javascript(render(partial: 'table',locals: {articles: @articles})) %>")
+
+	$('#myModal').modal("hide")
+<%else%>
+	
+	$('#article_errors').html(
+	"<%= escape_javascript(render(partial: 'article_error_messege',locals: {article: @article})) %>")
+<%end%>
+
