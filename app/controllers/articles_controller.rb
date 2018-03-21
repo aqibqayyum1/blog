@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
        end
       format.html { redirect_to @article, notice: 'Article was successfully created.' }
       format.js  {}
-    end
+     end
   end
      
   def update

@@ -1,19 +1,21 @@
+<div class="container">
 
-
-<h1>Hello, Rails!</h1>
-<%= link_to 'Show All Articles', controller: 'welcome' %>
+<h2 style="text-align: center;"><%= link_to 'Show All Articles', controller: 'welcome' %>
+</h2>
 <%= link_to 'My Blog', controller: 'articles' %>
 
 <p>You are now signed_in <br> <strong><%= current_user.email %> </strong></p>
 
 
-<h1>Listing articles     </h1>
+<h1 style="text-align: center;">Listing Articles     </h1>
  <%#= link_to 'New article', new_article_path %>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+
+<button  type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
   Create New Article
 </button>
+<br><br>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -41,4 +43,4 @@
 </div>
 <%= link_to "logout", destroy_user_session_path, method: :delete %>
 
- 
+ </div>
